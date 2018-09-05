@@ -19,7 +19,9 @@ complex64 complex128
 ```
 
 ## Other common types
+``` go
 big.Int
+```
 
 ## Type conversion
 
