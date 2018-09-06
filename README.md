@@ -29,15 +29,20 @@ big.Int
 
 ### int
 
-### []byte2big.Int
+### []byte to big.Int
 ``` go
 import "math/big"
 new(big.Int).SetBytes([]byte) 
 ```
 
-### []byte2hex
+### []byte to hex
 ``` go
 import "github.com/ethereum/go-ethereum/common"
 common.Bytes2Hex([]byte)
+```
+
+### uint64 to int64
+``` go
+int64(uint64)
 ```
 
