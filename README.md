@@ -29,6 +29,39 @@ big.Int
 
 ## Type conversion
 
+### intX to intY
+if X < Y
+``` go
+i := int32(10)
+j := int64(i)
+```
+
+if X > Y, be careful the overflow
+``` go
+i := int(3545298788787)
+j := int8(i)
+fmt.Println(j)  // -77     overflowed!
+```
+
+### string to float
+Use the strconv.ParseFloat function to parse a string as a floating-point number with the precision specified by bitSize: 32 for float32, or 64 for float64.
+``` go
+f := "3.14159265"
+if s, err := strconv.ParseFloat(f, 32); err == nil {
+    fmt.Println(s) // 3.1415927410125732
+}
+if s, err := strconv.ParseFloat(f, 64); err == nil {
+    fmt.Println(s) // 3.14159265
+}
+```
+
+### float to string
+``` go
+strconv.FormatFloat(f float64, fmt byte, prec, bitSize int) string
+```
+
+
+
 ### string to big.Int
 ``` go
 package main
