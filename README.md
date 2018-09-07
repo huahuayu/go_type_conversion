@@ -52,6 +52,22 @@ func main() {
 }
 ```
 
+### string to []string
+``` go
+strings.Split(str string, seperator string) []string
+```
+
+## []string to string
+``` go
+strings.Join(arr []string, seperator string) string
+```
+
+### big.Int to string
+``` go
+bigint := big.NewInt(123)
+bigstr := bigint.String()
+```
+
 ### int64 to big.Int
 ``` go
 	bi := big.NewInt(int64Value)
