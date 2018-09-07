@@ -64,25 +64,12 @@ strconv.FormatFloat(f float64, fmt byte, prec, bitSize int) string
 
 ### string to big.Int
 ``` go
-package main
-
-import (
-	"fmt"
-	"log"
-	"math/big"
-)
-
-func main() {
-	// The Scan function is rarely used directly;
-	// the fmt package recognizes it as an implementation of fmt.Scanner.
-	i := new(big.Int)
-	_, err := fmt.Sscan("18446744073709551617", i)
-	if err != nil {
-		log.Println("error scanning value:", err)
-	} else {
-		fmt.Println(i)
-	}
+bi := new(big.Int)
+bi, ok := bi.SetString(str, 10)
+if !ok {
+	return nil, errors.New("string to bigint convert error")
 }
+return bi, nil
 ```
 
 ### string to []string
